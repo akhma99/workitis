@@ -1,6 +1,3 @@
-package academy.cashbackmerge.config;
+package academy.cashbackmerge.model;
 
-public record Tile() {
-    private static int percent;
-    
-}
+public record Tile(int cashback) {}

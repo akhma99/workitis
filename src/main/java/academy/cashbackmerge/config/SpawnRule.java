@@ -1,4 +1,5 @@
 package academy.cashbackmerge.config;
 
-public record SpawnRule() {
-}
+import java.math.BigDecimal;
+
+public record SpawnRule(int cashback, BigDecimal probability) {}
