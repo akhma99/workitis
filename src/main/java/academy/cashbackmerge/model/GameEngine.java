@@ -30,13 +30,32 @@ public class GameEngine {
         boolean isChanged = false;
         Board board = state.getBoard();
         for (int i = 0; i<board.getSize();i++){
+            if (direction == Direction.LEFT || direction == Direction.UP){
 
+            }
         }
     }
 
     private List<Tile> extractLine(Board board, int index, Direction direction){
-        List<Tile> result = new ArrayList<>();
+        List<Tile> line = new ArrayList<>();
+        for (int j = 0; j<board.getSize(); j++){
+            if (direction == Direction.LEFT || direction == Direction.RIGHT){
+                line.add(board.getTile(index,j));
+            } else {
+                line.add(board.getTile(j,index));
+            }
+        }
+        return line;
+    }
 
+    private void writeLine(Board board, int index, Direction direction, List<Tile> tiles){
+        for (int j = 0; j<board.getSize(); j++){
+            if (direction == Direction.LEFT || direction == Direction.RIGHT){
+                board.setTile(index,j,tiles.get(j));
+            } else {
+                board.setTile(j,index,tiles.get(j));
+            }
+        }
     }
 
 }
