@@ -5,12 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Board {
-    private final Tile[][] tiles;
 
+    private static final int DEFAULT_SIZE = 4;
+    private final Tile[][] tiles;
     private final int size;
 
     public Board() {
-        this(4); // Вызывает второй конструктор, передавая ему 4
+        this(DEFAULT_SIZE); // Вызывает второй конструктор, передавая ему 4
     }
 
     public Board(int size) {
