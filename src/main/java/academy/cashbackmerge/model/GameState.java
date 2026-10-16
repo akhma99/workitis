@@ -11,6 +11,12 @@ public class GameState {
         this.movesLeft = movesLeft;
     }
 
+    public GameState(int movesLeft, int boardSize) {
+        this.board = new Board(boardSize);
+        this.score = 0;
+        this.movesLeft = movesLeft;
+    }
+
     public Board getBoard() {
         return board;
     }

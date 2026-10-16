@@ -10,7 +10,7 @@ public class GameInitializer {
 
     public GameState createInitialState(CampaignConfig config, long seed) {
         Random random = new Random(seed);
-        GameState gameState = new GameState(config.movesLimit());
+        GameState gameState = new GameState(config.movesLimit(), config.boardSize());
         spawnTile(gameState, config, random);
         spawnTile(gameState, config, random);
         return gameState;

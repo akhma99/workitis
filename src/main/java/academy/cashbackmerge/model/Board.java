@@ -7,11 +7,12 @@ import java.util.List;
 public class Board {
 
     private static final int DEFAULT_SIZE = 4;
+
     private final Tile[][] tiles;
     private final int size;
 
     public Board() {
-        this(DEFAULT_SIZE); // Вызывает второй конструктор, передавая ему 4
+        this(DEFAULT_SIZE);
     }
 
     public Board(int size) {
@@ -46,10 +47,22 @@ public class Board {
         }
     }
 
+    public int getMaxCashback(){
+        int maxCashback = 0;
+        for (int i = 0; i<size; i++){
+            for (int j = 0; j<size; j++){
+                if (tiles[i][j].cashback()>maxCashback){
+                    maxCashback=tiles[i][j].cashback();
+                }
+            }
+        }
+        return maxCashback;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < size; i++) { // Используем size вместо tiles.length
+        for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 int val = getTile(i, j).cashback();
                 stringBuilder.append(val == 0 ? "." : val).append("\t");
